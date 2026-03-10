@@ -8,8 +8,8 @@ void main() {
     vec3 color = texture2D(u_screenshot, v_uv).rgb;
 
     // ball properties
-    float radius = 30.0;
-    vec2 speed = vec2(300.0, 200.0);
+    float radius = 80.0;
+    vec2 speed = vec2(1000.0, 750.0);
 
     // bounce: ping-pong across screen in pixel coords
     vec2 range = u_resolution - vec2(radius * 2.0);
