@@ -1,0 +1,4 @@
+#!/bin/sh
+# Kill the running screensaver renderer.
+pkill -x wiping
+rm -f /tmp/wiping-screenshot.png

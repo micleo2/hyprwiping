@@ -1,0 +1,12 @@
+#!/bin/sh
+# Take screenshot and launch the screensaver renderer.
+# Usage: wiping-start [shader.frag]
+#
+# Default shader is blur-drift.frag
+
+SHADER_DIR="${WIPING_SHADER_DIR:-$(dirname "$0")/../shaders}"
+SHADER="${1:-$SHADER_DIR/blur-drift.frag}"
+SCREENSHOT="/tmp/wiping-screenshot.png"
+BINARY="$(dirname "$0")/../nasignore/release/wiping"
+
+grim "$SCREENSHOT" && exec "$BINARY" --shader "$SHADER" --screenshot "$SCREENSHOT"
